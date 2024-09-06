@@ -7,8 +7,6 @@ public abstract class Pony {
 
     protected String name;
     protected int experienceLevel;
-    //protected int positionX;
-    //protected int positionY;
     protected Coordinate position;
 
     public Pony(String name, int experienceLevel, int positionX, int positionY) {
@@ -36,11 +34,4 @@ public abstract class Pony {
         return experienceLevel;
     }
 
-    public int getPositionX() {
-        return positionX;
-    }
-
-    public int getPositionY() {
-        return positionY;
-    }
 }
