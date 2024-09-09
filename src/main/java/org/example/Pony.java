@@ -19,15 +19,13 @@ public abstract class Pony {
         this.name = newName;
     }
 
-
     public void walk(Direction direction) {
         position.move(direction);
         System.out.println(name + " walked "+ direction + " to position " + position);
     }
 
-
-    public String getName() {
-        return name;
+    public Coordinate getPosition() {
+        return position;
     }
 
     public int getExperienceLevel() {

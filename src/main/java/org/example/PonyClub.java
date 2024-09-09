@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.direction.Coordinate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class PonyClub {
         for (User user : users) {
             Pony userHighestExpPony = user.getHighestExpPony();
             if (userHighestExpPony != null) {
-                if (highestExpPony != null || userHighestExpPony.getExperienceLevel() > highestExpPony.getExperienceLevel()) {
+                if (highestExpPony == null || userHighestExpPony.getExperienceLevel() > highestExpPony.getExperienceLevel()) {
                     highestExpPony = userHighestExpPony;
                     topUser = user;
                 }
@@ -27,15 +29,11 @@ public class PonyClub {
         return topUser;
     }
 
-    public List<Pony> poniesAtPosition(int x, int y) {
+    public List<Pony> poniesAtPosition(Coordinate position) {
         List<Pony> result = new ArrayList<>();
         for (User user : users) {
-            result.addAll(user.getPoniesWithSamePosition(x, y));
+            result.addAll(user.getPoniesWithSamePosition(position));
         }
         return result;
-    }
-
-    public List<User> getUsers() {
-        return users;
     }
 }

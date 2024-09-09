@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.direction.Coordinate;
 import org.example.ponyType.Superpony;
 
 import java.time.LocalDate;
@@ -36,10 +37,10 @@ public class User {
         return highestExpPony;
     }
 
-    public List<Pony> getPoniesWithSamePosition(int x, int y) {
+    public List<Pony> getPoniesWithSamePosition(Coordinate position) {
         List<Pony> resultPonies = new ArrayList<>();
         for (Pony pony : ponies) {
-            if (pony.getPositionX() == x && pony.getPositionY() == y) {
+            if (pony.getPosition().equals(position)) {
                 resultPonies.add(pony);
             }
         }
